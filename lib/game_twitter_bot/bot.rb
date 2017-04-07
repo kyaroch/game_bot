@@ -5,8 +5,8 @@ module GameTwitterBot
     end
 
     def populate
-      GameTwitterBot::Generator.generate_games
-                               .each { |game| @database.insert(game) }
+      games = GameTwitterBot::Generator.generate_games
+      @database.insert(games)
     end
   end
 end

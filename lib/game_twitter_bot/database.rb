@@ -5,8 +5,10 @@ module GameTwitterBot
       initialize_table
     end
 
-    def insert(name)
-      @db.execute("INSERT INTO games (name) VALUES (?)", name)
+    def insert(names)
+      Array(names).each do |name|
+        @db.execute("INSERT INTO games (name) VALUES (?);", name)
+      end
     end
 
     def random_game
