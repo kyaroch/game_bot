@@ -13,15 +13,15 @@ module GameTwitterBot
       # First and last lines are usually fragmentary
       lines = run_rnn.split("\n")[1..-2]
       lines.map! { |line| format_line(line) }
-           .select! { |line| line.length <= 140 }
+           .select { |line| line.length <= 140 }
     end
 
     private
 
-    def self.run_rnn
+    def run_rnn
       Dir.chdir(@rnn_path)
       filename = Dir.entries(@checkpoint_directory)
-                    .select { |filename| filename =~ /\.t7$/ }
+                    .select { |filename| filename.match(/\.t7$/) }
                     .sample
       # To run this on a GPU, change -gpu from -1
       `th sample.lua -checkpoint cv/#{filename} -gpu -1 -temperature #{temperature}`

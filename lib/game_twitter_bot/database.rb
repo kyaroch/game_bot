@@ -19,6 +19,9 @@ module GameTwitterBot
       @db.execute("DELETE FROM games WHERE id = ?;", id)
     end
 
+    def count
+    end
+
     private
 
     def initialize_table

@@ -15,10 +15,19 @@ module GameTwitterBot
       @database.insert(games)
     end
 
+    def post
+      game = @database.random_game
+      twitter_client.tweet(game[1])
+    end
+
     private
 
     def generator
-      @generator ||= GameTwitterBot::Generator.new(config)
+      @generator ||= GameTwitterBot::Generator.new(@config)
+    end
+
+    def twitter_client
+      @twitter_client = GameTwitterBot::TwitterClient.new(@config)
     end
   end
 end
