@@ -5,5 +5,5 @@ require 'game_twitter_bot/generator'
 require 'yaml'
 
 module GameTwitterBot
-  CONFIG = YAML.load(File.read("config.yml"))
+  CONFIG = YAML.load(File.read("config.yml")).freeze
 end

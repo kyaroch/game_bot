@@ -12,6 +12,7 @@ module GameTwitterBot
       # First and last lines are usually fragmentary
       lines = run_rnn.split("\n")[1..-2]
       lines.map! { |line| format_line(line) }
+           .select! { |line| line.length <= 140 }
     end
 
     def self.run_rnn
@@ -24,6 +25,8 @@ module GameTwitterBot
     end
 
     def self.temperature
+      # Higher temperature means the RNN will select less probable characters.
+      # Temperature 0.7 - 0.9 seems to produce the best results.
       0.7 + [0.0, 0.1, 0.2].sample
     end
 

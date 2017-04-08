@@ -1,2 +1,0 @@
-Game1 (a, b)
-Game2 (c, d)
