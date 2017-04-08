@@ -1,7 +1,7 @@
 module GameTwitterBot
   class Database
-    def initialize
-      @db = SQLite3::Database.new("games.db")
+    def initialize(config)
+      @db = SQLite3::Database.new(config["db_path"] || "games.db")
       initialize_table
     end
 
