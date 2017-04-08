@@ -12,6 +12,7 @@ module GameBot
     end
 
     def post(game)
+      puts "posting to tumblr"
       @client.text(@url, body: game)
     end
   end

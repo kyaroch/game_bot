@@ -20,7 +20,8 @@ module GameBot
     def post
       populate_database_if_needed
       game = @database.random_game
-      twitter_client.tweet(game[1])
+      twitter_client.tweet(game[1]) if @config["post_to_twitter"]
+      tumblr_client.post(game[1]) if @config["post_to_tumblr"]
       @database.delete(game[0])
     end
 
@@ -32,6 +33,10 @@ module GameBot
 
     def twitter_client
       @twitter_client = GameBot::TwitterClient.new(@config)
+    end
+
+    def tumblr_client
+      @tumblr_client = GameBot::TumblrClient.new(@config)
     end
 
     def populate_database_if_needed

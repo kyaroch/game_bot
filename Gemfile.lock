@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/drusepth/tumblr_client.git
+  revision: d34444b719fbf73979392fade2cc4a8265a37201
+  specs:
+    tumblr_client (0.8.6)
+      faraday
+      faraday_middleware
+      json
+      mime-types
+      oauth
+      simple_oauth
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -33,13 +45,6 @@ GEM
     simple_oauth (0.3.1)
     sqlite3 (1.3.13)
     thread_safe (0.3.6)
-    tumblr_client (0.8.2)
-      faraday (>= 0.8)
-      faraday_middleware (>= 0.8)
-      json
-      mime-types
-      oauth
-      simple_oauth
     twitter (6.1.0)
       addressable (~> 2.5)
       buftok (~> 0.2.0)
@@ -59,7 +64,7 @@ PLATFORMS
 
 DEPENDENCIES
   sqlite3
-  tumblr_client
+  tumblr_client!
   twitter
 
 BUNDLED WITH
