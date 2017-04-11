@@ -2,9 +2,10 @@ module GameBot
   class Bot
     MINIMUM_DB_COUNT = 50
 
-    def initialize(config_path = "config.yml")
-      @config = YAML.load(File.read(config_path)).freeze
-      @database = GameBot::Database.new(@config)
+    def initialize(options = {})
+      config_file = File.read(options["config_path"] || "config.yml")
+      @config = YAML.load(config_file).freeze
+      @database = GameBot::Database.new(options["db_path"])
     end
 
     def populate

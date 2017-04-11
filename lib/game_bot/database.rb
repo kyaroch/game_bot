@@ -1,7 +1,7 @@
 module GameBot
   class Database
-    def initialize(config)
-      @db = SQLite3::Database.new(config["db_path"] || "games.db")
+    def initialize(db_path = nil)
+      @db = SQLite3::Database.new(db_path || "games.db")
       initialize_table
     end
 

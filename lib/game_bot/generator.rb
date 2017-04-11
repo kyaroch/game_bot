@@ -38,6 +38,8 @@ module GameBot
       # reasons
       line.gsub(/\?+/, "?")
           .gsub(/\;[^\w]+\)/, ")")
+          .gsub(/\(\s+/, "(")
+          .gsub(/\s+\)/, ")")
           .gsub(";", "; ")
           .gsub(/\s+/, " ")
     end
