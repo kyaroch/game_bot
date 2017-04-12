@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
-require 'game_bot'
+$LOAD_PATH.unshift File.dirname(__FILE__) + "/.."
+require 'lib/game_bot'
 require 'optparse'
 
 options = { file: nil, populate: false, config_path: nil, db_path: nil }
