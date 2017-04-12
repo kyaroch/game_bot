@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
+require 'game_bot'
 require 'optparse'
-require 'lib/game_bot'
 
 options = { file: nil, populate: false, config_path: nil, db_path: nil }
 
