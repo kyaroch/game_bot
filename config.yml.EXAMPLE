@@ -1,0 +1,13 @@
+rnn_path: "/Users/example-user/torch/torch-rnn"
+checkpoint_directory: cv
+post_to_twitter: true
+post_to_tumblr: true
+twitter_api_key:
+twitter_api_secret:
+twitter_access_token:
+twitter_access_token_secret:
+tumblr_consumer_key:
+tumblr_consumer_secret:
+tumblr_access_token:
+tumblr_access_token_secret:
+tumblr_url: "example.tumblr.com"
